@@ -22,5 +22,5 @@ class MenuItem(BaseModel):
     category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Category')
     status = models.IntegerField(choices=ITEM_STATUS, default=ITEM_STATUS.AVAILABLE)
     price = models.PositiveIntegerField(verbose_name='Price')
-    discount = models.PositiveIntegerField(verbose_name='Discount')
+    discount = models.PositiveIntegerField(verbose_name='Discount',default=0)
     ...
