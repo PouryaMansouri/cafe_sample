@@ -12,15 +12,17 @@ ITEM_STATUS = Choices(
 
 class Category(BaseModel):
     name = models.CharField(verbose_name='Name', max_length=250, unique=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='parent', verbose_name='Parent Category',
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='sub_categories',
+                               verbose_name='Parent Category',
                                null=True, blank=True)
     ...
 
 
 class MenuItem(BaseModel):
     name = models.CharField(max_length=250, unique=True, verbose_name='Item name')
-    category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Category')
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Category',
+                                 related_name='menu_items')
     status = models.IntegerField(choices=ITEM_STATUS, default=ITEM_STATUS.AVAILABLE)
     price = models.PositiveIntegerField(verbose_name='Price')
-    discount = models.PositiveIntegerField(verbose_name='Discount',default=0)
+    discount = models.PositiveIntegerField(verbose_name='Discount', default=0)
     ...
