@@ -9,3 +9,8 @@ class Category(BaseModel):
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='parent', verbose_name='Parent Category')
     ...
 
+
+class MenuItem(BaseModel):
+    name = models.CharField(max_length=250, unique=True, verbose_name='Item name')
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Category')
+    ...
