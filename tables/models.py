@@ -14,3 +14,7 @@ TABLE_STATUS = Choices(
 class Table(BaseModel):
     status = models.IntegerField(choices=TABLE_STATUS, default=TABLE_STATUS.EMPTY)
     capacity = models.PositiveIntegerField()
+
+    @property
+    def all_orders(self):
+        ...
