@@ -12,7 +12,7 @@ pip install requirements.txt
 - [ ] Add all models to **Django admin Panel**
 
 >**Note:**
-1. Only user class view.
+1. Only use class view.
 2. In Table model, complete the property.
 
 >**Please do your best** :+1:
