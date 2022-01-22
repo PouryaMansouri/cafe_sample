@@ -14,5 +14,6 @@ pip install requirements.txt
 >**Note:**
 1. Only use class view.
 2. In Table model, complete the property.
+3. Customize Django admin panel
 
 >**Please do your best** :+1:
