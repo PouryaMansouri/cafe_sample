@@ -27,7 +27,7 @@ class Table(BaseModel):
             how many people can sit around this table
 
         Methods
-        -------
+        ---------
         all_orders()
             :return order_query
             return all orders of this table
